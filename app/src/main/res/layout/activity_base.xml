@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/message_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+        <Button
+            android:id="@+id/jump_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="跳转到到下一个Activity"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/send_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送消息"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/send_many_times_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送很多条消息"
+            android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/kill_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="杀死主进程"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+</RelativeLayout>

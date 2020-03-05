@@ -1,0 +1,2 @@
+include ':app', ':multiprocess-eventbus'
+rootProject.name='MultiProcessEventBus'
