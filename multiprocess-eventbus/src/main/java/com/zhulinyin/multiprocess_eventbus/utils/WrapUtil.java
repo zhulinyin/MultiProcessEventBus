@@ -13,7 +13,6 @@ public class WrapUtil {
         Bundle bundle = new Bundle();
         bundle.putString(Constant.CallDataKey.CLASS_NAME, event.getClass().getName());
         bundle.putString(Constant.CallDataKey.EVENT_JSON, SerializeUtil.encode(event));
-        bundle.putBoolean(Constant.CallDataKey.IS_MAIN_THREAD, ThreadUtil.isUIThread());
         return bundle;
     }
 
@@ -28,10 +27,6 @@ public class WrapUtil {
             e.printStackTrace();
         }
         return null;
-    }
-
-    public static boolean isEventOnMainThread(Bundle bundle) {
-        return bundle.getBoolean(Constant.CallDataKey.IS_MAIN_THREAD);
     }
 
     public static Bundle wrapClients(ArrayList<Messenger> clients) {

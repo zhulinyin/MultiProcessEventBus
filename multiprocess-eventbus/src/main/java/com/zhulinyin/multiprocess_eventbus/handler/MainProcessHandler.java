@@ -25,22 +25,12 @@ public class MainProcessHandler extends Handler {
     public void handleMessage(@NonNull Message msg) {
         switch (msg.what) {
             case Constant.MsgCode.MSG_POST:
-                final Object postEvent = WrapUtil.unWrapEvent(msg.getData());
-                ThreadUtil.runOnSpecifiedThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        EventBus.getDefault().post(postEvent);
-                    }
-                }, WrapUtil.isEventOnMainThread(msg.getData()));
+                Object postEvent = WrapUtil.unWrapEvent(msg.getData());
+                EventBus.getDefault().post(postEvent);
                 break;
             case Constant.MsgCode.MSG_POST_STICKY:
-                final Object postStickyEvent = WrapUtil.unWrapEvent(msg.getData());
-                ThreadUtil.runOnSpecifiedThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        EventBus.getDefault().postSticky(postStickyEvent);
-                    }
-                }, WrapUtil.isEventOnMainThread(msg.getData()));
+                Object postStickyEvent = WrapUtil.unWrapEvent(msg.getData());
+                EventBus.getDefault().postSticky(postStickyEvent);
                 break;
             case Constant.MsgCode.MSG_REGISTER_CLIENT:
                 MessengerManager.getInstance().registerMessenger(msg.replyTo);

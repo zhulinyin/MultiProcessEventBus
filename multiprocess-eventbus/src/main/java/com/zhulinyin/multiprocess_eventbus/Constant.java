@@ -20,7 +20,5 @@ public interface Constant {
         String EVENT_JSON = "eventJson";
 
         String CLIENTS = "clients";
-
-        String IS_MAIN_THREAD = "isMainThread";
     }
 }
