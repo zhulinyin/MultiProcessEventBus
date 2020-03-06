@@ -1,5 +1,6 @@
 package com.zhulinyin.multiprocess_eventbus.utils;
 
+import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -19,6 +20,7 @@ public class ThreadUtil {
 
     private static Handler mainHandler = new Handler(Looper.getMainLooper());
 
+    @SuppressLint("CI_NotAllowInvokeExecutorsMethods")
     private static final Executor executor = Executors.newSingleThreadExecutor();
 
     /**

@@ -1,4 +1,15 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'zhulinyin'
+    repoName = 'MultiProcessEventBus'
+    groupId = 'org.zhulinyin'
+    artifactId = 'multiprocess-eventbus'
+    publishVersion = '1.0.0'
+    desc = 'an IPC library based on EventBus'
+    website = 'https://github.com/zhulinyin/MultiProcessEventBus'
+}
 
 android {
     compileSdkVersion 29

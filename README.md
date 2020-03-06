@@ -14,22 +14,36 @@ MultiProcessEventBus利用Messenger实现了IPC，事件收发是基于EventBus�
 
 ## 使用方式
 ### Step1
+通过gradle添加依赖
+```gradle
+implementation 'org.zhulinyin:multiprocess-eventbus:1.0.0'
+```
+或通过Maven
+```xml
+<dependency>
+  <groupId>org.zhulinyin</groupId>
+  <artifactId>multiprocess-eventbus</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
+### Step2
 在Application的onCreate()中进行初始化。
 ```java
 MultiProcessEventBus.getDefault().init(this);
 ```
-### Step2
+### Step3
 创建事件类。
 ```java
 public static class MessageEvent { /* Additional fields if needed */ }
 ```
-### Step3
+### Step4
 在需要监听事件的地方注册事件处理。
 ```java
 @Subscribe(threadMode = ThreadMode.MAIN)  
 public void onMessageEvent(MessageEvent event) {/* Do something */};
 ```
-### Step4
+### Step5
 注册和反注册观察者。
 ```java
 @Override
@@ -44,7 +58,7 @@ public void onStop() {
     MultiProcessEventBus.getDefault().unregister(this);
 }
 ```
-### Step5
+### Step6
 发布事件
 ```java
 MultiProcessEventBus.getDefault().post(new MessageEvent());
